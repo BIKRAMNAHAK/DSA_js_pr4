@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Middle Element of the Stack</title>
+</head>
+<body>
+
+
+
+    <script>
+        class Stack {
+            constructor(limit){
+                this.stack = [];
+                this.size = this.stack.length;
+                this.limit = limit || 5;
+            }
+
+            addElement(data){
+                this.stack.push(data);
+                this.size++;
+            }
+
+            deleteMid(){
+                if(this.stack.length === 0) {
+                    return "Stack is empty.";
+                }
+
+                let midElement = Math.floor(this.stack.length / 2);
+                let deletedElement = this.stack.splice(midElement, 1)[0];
+                return deletedElement;
+            }
+        }
+
+
+
+        let stk = new Stack(7);
+        stk.addElement(10);
+        stk.addElement(20);
+        stk.addElement(30);
+        stk.addElement(40);
+        stk.addElement(50);
+       
+
+        console.log("Stack data before deletion: ", stk.stack);
+        console.log("Deleted middle element: ", stk.deleteMid());
+        console.log("Stack data after deletion: ", stk.stack);
+    </script>
+</body>
+</html>

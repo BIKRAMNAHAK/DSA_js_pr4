@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+            class Stack {
+            constructor(){
+                this.stack = [];
+                this.queue1 = [];
+
+            }
+
+            enqueue(data){
+                this.stack.push(data);
+            }
+
+            reverseStack(){
+                this.queue1 = this.stack
+                let queue2 = [];
+                 while (this.queue1.length > 0) {
+                    queue2.push(this.queue1.pop())
+                 }
+
+                 while (queue2.length > 0) {
+                    this.stack.push(queue2.shift())
+                 }
+                 
+                 return this.stack
+            }
+        }
+        let stk = new Stack();
+        stk.enqueue(10);
+        stk.enqueue(20);
+        stk.enqueue(30);
+        stk.enqueue(40);
+        stk.enqueue(50);
+
+        console.log("Stack is: ", stk.stack);
+        console.log("Reversed stack: ", stk.reverseStack());
+
+       
+    </script>
+</body>
+</html>
